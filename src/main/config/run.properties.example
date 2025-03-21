@@ -1,0 +1,28 @@
+# Real comments in this file are marked with '#' whereas commented out lines
+# are marked with '!'
+
+# Token used to authenticate the service that user authentication is delegated
+# to.  This may either be a clear-text password or a cryptographic hash of a
+# password.
+#
+# A password hash must start with a '$' character and be in the format used by
+# the crypt(3) C library function.  It may be created using the mkpasswd(1)
+# utility, which is provided by the whois package on Debian-based systems.
+# The supported hash algorithms are MD5, SHA-256, and SHA-512.
+#
+# Use one of the following commands to create a hash:
+#     mkpasswd --method=SHA-256
+#     mkpasswd --method=SHA-512
+#
+# A clear-text password must not start with a '$' character.
+secretToken = 
+
+# If access to the authenticator should only be allowed from certain IP
+# addresses then provide a space-separated list of allowed values.  These can
+# be one or more of the following:
+#     Hostname
+#     IPv4 or IPv6 address
+#     IPv4 or IPv6 address range in CIDR notation
+#
+# For the delegating authenticator this is mandatory.
+ip = localhost

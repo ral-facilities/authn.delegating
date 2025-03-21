@@ -1,0 +1,41 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.2.0 https://maven.apache.org/xsd/assembly-2.2.0.xsd">
+	<id>distro</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<fileSets>
+		<fileSet>
+			<outputDirectory>authn.delegating</outputDirectory>
+			<directory>${basedir}/src/main/config</directory>
+		</fileSet>
+		<fileSet>
+			<outputDirectory>authn.delegating</outputDirectory>
+			<directory>${basedir}/src/main/scripts</directory>
+		</fileSet>
+	</fileSets>
+
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>authn.delegating</outputDirectory>
+			<useTransitiveDependencies>false</useTransitiveDependencies>
+			<includes>
+				<include>org.icatproject:authn.delegating</include>
+			</includes>
+		</dependencySet>
+		<dependencySet>
+			<outputDirectory>authn.delegating</outputDirectory>
+			<useTransitiveDependencies>false</useTransitiveDependencies>
+			<includes>
+				<include>org.icatproject:icat.utils</include>
+			</includes>
+			<unpack>true</unpack>
+			<unpackOptions>
+				<includes>
+					<include>setup_utils.py</include>
+				</includes>
+			</unpackOptions>
+		</dependencySet>
+	</dependencySets>
+</assembly>
