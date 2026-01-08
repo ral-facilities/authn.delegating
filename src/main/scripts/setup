@@ -2,7 +2,6 @@
 from setup_utils import *
 import os
 
-# authn.simple
 def undeploy():
     app = actions.getAppName("authn.delegating")
     if app:
