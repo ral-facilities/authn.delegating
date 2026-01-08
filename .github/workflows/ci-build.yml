@@ -1,0 +1,30 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build_and_test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+    - uses: actions/setup-java@f2beeb24e141e01a676f977032f5a29d81c9e27e # v5.1.0
+      with:
+        java-version: 25
+        distribution: temurin
+        cache: maven
+
+    - name: Payara build
+      run: mvn -B clean package
+
+    - name: Quarkus build & integration tests
+      run: mvn -B -Pquarkus clean verify
+
+    - name: Quarkus native build & integration tests
+      run: mvn -B -Pquarkus -Dnative clean verify
