@@ -5,14 +5,16 @@
 # to.  This may either be a clear-text password or a cryptographic hash of a
 # password.
 #
-# A password hash must start with a '$' character and be in the format used by
-# the crypt(3) C library function.  It may be created using the mkpasswd(1)
-# utility, which is provided by the whois package on Debian-based systems.
-# The supported hash algorithms are MD5, SHA-256, and SHA-512.
+# A password hash must start with a '$' character and be in Modular Crypt
+# Format.  The supported hash algorithms are MD5, SHA-256, and SHA-512.  Do
+# not use MD5 because it is insecure.
 #
-# Use one of the following commands to create a hash:
+# Use the following command to create a SHA-256 hash:
+#     openssl passwd -5
+#
+# The mkpasswd(1) utility can also be used.  It is provided by the whois
+# package on Debian-based systems:
 #     mkpasswd --method=SHA-256
-#     mkpasswd --method=SHA-512
 #
 # A clear-text password must not start with a '$' character.
 secretToken = 
