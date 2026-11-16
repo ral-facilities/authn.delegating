@@ -3,7 +3,7 @@
 
 	<groupId>org.icatproject</groupId>
 	<artifactId>authn.delegating</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>${packaging.type}</packaging>
 	<name>ICAT: Delegating authenticator</name>
 
