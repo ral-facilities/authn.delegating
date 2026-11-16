@@ -10,11 +10,31 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>11</maven.compiler.release>
+		<tagNameFormat>v@{project.version}</tagNameFormat>
 	</properties>
+
+	<scm>
+		<connection>scm:git:https://github.com/ral-facilities/authn.delegating.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/ral-facilities/authn.delegating.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/ral-facilities/authn.delegating</url>
+	</scm>
+
+	<distributionManagement>
+		<downloadUrl>https://nexus.esc.rl.ac.uk/</downloadUrl>
+		<repository>
+			<id>nexus.esc.rl.ac.uk</id>
+			<url>https://nexus.esc.rl.ac.uk/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus.esc.rl.ac.uk</id>
+			<url>https://nexus.esc.rl.ac.uk/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<repositories>
 		<repository>
-			<id>ICAT Repo</id>
+			<id>repo.icatproject.org</id>
 			<url>https://repo.icatproject.org/repo</url>
 		</repository>
 	</repositories>
@@ -158,6 +178,16 @@
 								<serverUrl>${serverUrl}</serverUrl>
 							</systemPropertyVariables>
 						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-release-plugin</artifactId>
+						<version>3.3.1</version>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>3.5.1</version>
 					</plugin>
 				</plugins>
 			</build>
