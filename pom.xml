@@ -3,7 +3,7 @@
 
 	<groupId>org.icatproject</groupId>
 	<artifactId>authn.delegating</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>${packaging.type}</packaging>
 	<name>ICAT: Delegating authenticator</name>
 
@@ -16,7 +16,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/ral-facilities/authn.delegating.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/ral-facilities/authn.delegating.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>v1.0.0</tag>
 		<url>https://github.com/ral-facilities/authn.delegating</url>
 	</scm>
 
